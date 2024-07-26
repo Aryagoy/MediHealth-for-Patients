@@ -1,7 +1,8 @@
-*MediHealth for Patients*
+# MediHealth for Patients #
 
 Implementing a Nextjs application
-**BluePrint**
+
+##BluePrint##
 
 * User Authentication: Secure login and registration with options like email, phone, or social media accounts.
 * Profile Setup: Personal details, medical history, allergies, ongoing treatments, etc.
