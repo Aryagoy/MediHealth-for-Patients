@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+**MediHealth for Patients**
 
-## Getting Started
+Implementing a Nextjs application
+***BluePrint***
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+• User Authentication: Secure login and registration with options like email, phone, or social media accounts.
+• Profile Setup: Personal details, medical history, allergies, ongoing treatments, etc.
+• Profile Management: Update the informations
+• Upload Medical Documents: Upload prescriptions, lab reports, imaging results, etc. (effortless import and export)
+• View Medical History: Access a history of all uploaded documents and previous consultations.
+• Categorization: Organize records by type, date, or healthcare provider.
+• Doctor Directory: Find doctors nearby based on the gps location
+• Appointment Booking: Schedule appointments with doctors, view availability, and book time slots. (optional)
+• Educational Content: Articles, videos, and FAQs about various health conditions, treatments, and wellness tips.
+• Health Tips and Alerts: Regular updates on healthy living, disease outbreaks, seasonal health advice.
+• Medication Tracker: List of current medications, dosage, and frequency. (optional)
+• Reminders: Notifications for taking medications, refills, and follow-ups. (optional)
+• Drug Information: Access to detailed information about prescribed medications. (optional)
+• Data Analytics: Visualize health data trends and patterns.
+• Chatbot: if stuck anywhere
