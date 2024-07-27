@@ -26,6 +26,8 @@ export const LoginForm = () => {
   }
 
   return (
+    <>
+    <h1 className="mb-5"> Hi, Welome to MediHealth</h1>
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
         <FormFields
@@ -58,5 +60,6 @@ export const LoginForm = () => {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
+    </>
   );
 };
