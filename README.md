@@ -2,7 +2,7 @@
 
 Implementing a Nextjs application
 
-##BluePrint##
+## BluePrint ##
 
 * User Authentication: Secure login and registration with options like email, phone, or social media accounts.
 * Profile Setup: Personal details, medical history, allergies, ongoing treatments, etc.
@@ -19,3 +19,8 @@ Implementing a Nextjs application
 * Drug Information: Access to detailed information about prescribed medications. (optional)
 * Data Analytics: Visualize health data trends and patterns.
 * Chatbot: if stuck anywhere
+
+
+
+Tools to use:
+* Appwrite - for databases, authentication, messaging etc
