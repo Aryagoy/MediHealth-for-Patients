@@ -23,4 +23,5 @@ Implementing a Nextjs application
 
 
 Tools to use:
+* ShadcUI - to create the elements of the frontend like form, button, label, etc
 * Appwrite - for databases, authentication, messaging etc
