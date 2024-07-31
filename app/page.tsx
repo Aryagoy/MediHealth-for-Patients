@@ -1,4 +1,4 @@
-import { LoginForm } from "@/components/forms/LoginForm";
+import { LoginForm } from "@/pages/LoginForm";
 import Image from "next/image";
 // Design the login page first
 //left form , right image
