@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import RegisterationForm from "@/components/forms/RegistrationForm";
 
 const Register = () => {
   return (
@@ -20,7 +21,7 @@ const Register = () => {
             height={50}
             className="mb-12 h-10 w-fit"
           />
-          {/* <RegisterForm /> */}
+          <RegisterationForm />
         </div>
       </section>
     </div>

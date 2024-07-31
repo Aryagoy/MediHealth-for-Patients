@@ -12,9 +12,9 @@ import { UserFormValidation } from "@/lib/validation";
 
 import "react-phone-number-input/style.css";
 
-import SubmitButton from "../components/SubmitButton";
+import SubmitButton from "../SubmitButton";
 import { createUser } from "@/lib/actions/patient.action";
-import FormFields, { FormFieldType } from "../components/forms/FormField";
+import FormFields, { FormFieldType } from "./FormField";
 
 export const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
