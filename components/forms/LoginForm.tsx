@@ -1,16 +1,24 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form } from "../ui/form";
-import FormFields, { FormFieldType } from "./FormField";
-import SubmitButton from "../SubmitButton";
-import { useState } from "react";
+
+import { Form } from "@/components/ui/form";
+
 import { UserFormValidation } from "@/lib/validation";
+
+import "react-phone-number-input/style.css";
+
+import SubmitButton from "../SubmitButton";
+import { createUser } from "@/lib/actions/patient.action";
+import FormFields, { FormFieldType } from "./FormField";
 
 export const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
@@ -20,28 +28,33 @@ export const LoginForm = () => {
     },
   });
 
-  function onSubmit({
-    name,
-    email,
-    phone,
-  }: z.infer<typeof UserFormValidation>) {
+  const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
     setIsLoading(true);
+
     try {
-      //   const userData = { name, email, phone };
-      //   connect to backend
+      const user = {
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+      };
+
+      const newUser = await createUser(user);
+
+      if (newUser) {
+        router.push(`/patients/${newUser.$id}/register`);
+      }
     } catch (error) {
       console.log(error);
     }
-  }
+
+    setIsLoading(false);
+  };
 
   return (
     <>
-      <h1 className="mb-5"> Hi, Welome to MediHealth</h1>
+      <h1 className="mb-5">Hi, Welcome to MediHealth</h1>
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6 flex-1"
-        >
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 flex-1">
           <FormFields
             fieldType={FormFieldType.INPUT}
             control={form.control}

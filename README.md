@@ -25,3 +25,9 @@ Implementing a Nextjs application
 Tools to use:
 * ShadcUI - to create the elements of the frontend like form, button, label, etc
 * Appwrite - for databases, authentication, messaging etc
+
+
+Flow
+* The user puts in his details in the loginForm.tsx
+* On clicking the submit button, using appwrite API, the details are stored in the DB using createUser.
+* If the user already exists, the same user would be extracted from the database
