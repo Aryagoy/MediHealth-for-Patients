@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { E164Number } from "libphonenumber-js/core";
 import {
   FormControl,
@@ -15,10 +14,14 @@ import { Control } from "react-hook-form";
 import Image from "next/image";
 import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
+import ReactDatePicker from "react-datepicker";
+
 
 export enum FormFieldType {
   INPUT = "input",
   PHONE_INPUT = "phoneInput",
+  DATE_PICKER = "DATE_PICKER",
+  SKELETON = "SKELETON"
 }
 
 interface CustomProps {
@@ -29,6 +32,9 @@ interface CustomProps {
   iconSrc?: string;
   iconAlt?: string;
   fieldType: FormFieldType;
+  showTimeSelect?: boolean
+  dateFormat?: string;
+  renderSkeleton?: (field: any) => React.ReactNode;
 }
 
 const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
@@ -68,6 +74,19 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
           />
         </FormControl>
       );
+    case FormFieldType.DATE_PICKER:
+      return (
+        <FormControl>
+            <ReactDatePicker
+              showTimeSelect={props.showTimeSelect ?? false}
+              selected={field.value}
+              onChange={(date: Date) => field.onChange(date)}
+              timeInputLabel="Time:"
+              dateFormat={props.dateFormat ?? "MM/dd/yyyy"}
+              wrapperClassName="date-picker"
+            />
+          </FormControl>
+      )
   }
 };
 

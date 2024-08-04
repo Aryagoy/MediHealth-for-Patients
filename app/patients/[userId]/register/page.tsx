@@ -1,8 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import RegisterationForm from "@/components/forms/RegistrationForm";
+import { RegisterationForm } from "@/components/forms/RegistrationForm";
+import { getUser } from "@/lib/actions/patient.action";
+import { SearchParamProps } from "@/types";
 
-const Register = () => {
+const Register = async ({ params: { userId } }: SearchParamProps) => {
+  const user = await getUser(userId);
   return (
     <div className="flex h-screen max-h-screen">
       <Image
@@ -13,7 +16,7 @@ const Register = () => {
         className="side-img max-w-[390px]"
       />
       <section className="remove-scrollbar container">
-      <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
+        <div className="sub-container max-w-[860px] flex-1 flex-col py-10">
           <Image
             src="/assets/icons/download.png"
             alt="patient"
@@ -21,7 +24,7 @@ const Register = () => {
             height={50}
             className="mb-12 h-10 w-fit"
           />
-          <RegisterationForm />
+          <RegisterationForm user={user} />
         </div>
       </section>
     </div>
