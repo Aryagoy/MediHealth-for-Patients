@@ -91,12 +91,12 @@ export const RegisterationForm = ({ user }: { user: User }) => {
             />
           </div>
           <div className="flex flex-row gap-6 xl:flex-grow">
-            {/* <FormFields
+            <FormFields
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
               name="birthDate"
               label="Date of Birth"
-            /> */}
+            />
             <FormFields
               fieldType={FormFieldType.SKELETON}
               control={form.control}
