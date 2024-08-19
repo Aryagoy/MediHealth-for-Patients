@@ -96,6 +96,7 @@ export const RegisterationForm = ({ user }: { user: User }) => {
               control={form.control}
               name="birthDate"
               label="Date of Birth"
+              placeholder="Select your birth date"
             />
             <FormFields
               fieldType={FormFieldType.SKELETON}
@@ -120,6 +121,22 @@ export const RegisterationForm = ({ user }: { user: User }) => {
                   </RadioGroup>
                 </FormControl>
               )}
+            />
+          </div>
+          <div className="flex flex-row gap-6 xl:flex-grow">
+            <FormFields
+              fieldType={FormFieldType.INPUT}
+              control={form.control}
+              name="address"
+              label="Address"
+              placeholder="ex: 14 street, New York , NY , 11214"
+            />
+            <FormFields
+              fieldType={FormFieldType.INPUT}
+              control={form.control}
+              name="occupation"
+              label="Occupation"
+              placeholder="Software engineer"
             />
           </div>
 

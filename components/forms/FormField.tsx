@@ -75,7 +75,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
         <FormControl>
           <PhoneInput
             defaultCountry="US"
-            placeholder={props.placeholder}
+            placeholder={placeholder}
             international
             withCountryCallingCode
             value={field.value as E164Number | undefined}
@@ -102,6 +102,7 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
               showTimeSelect={showTimeSelect ?? false}
               timeInputLabel="Time:"
               wrapperClassName="date-picker"
+              placeholderText={placeholder}
             />
           </FormControl>
         </div>
