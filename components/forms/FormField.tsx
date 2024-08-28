@@ -17,15 +17,25 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {
+  Select,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+} from "../ui/select";
+import { Textarea } from "../ui/textarea";
 
 export enum FormFieldType {
   INPUT = "input",
   PHONE_INPUT = "phoneInput",
   DATE_PICKER = "DATE_PICKER",
   SKELETON = "SKELETON",
+  SELECT = "select",
+  TEXTAREA = "textarea",
 }
 
 interface CustomProps {
+  disabled?: boolean;
   control: Control<any>;
   name: string;
   label?: string;
@@ -36,6 +46,7 @@ interface CustomProps {
   showTimeSelect?: boolean;
   dateFormat?: string;
   renderSkeleton?: (field: any) => React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
@@ -109,6 +120,32 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
       );
     case FormFieldType.SKELETON:
       return renderSkeleton ? renderSkeleton(field) : null;
+    case FormFieldType.SELECT:
+      return (
+        <FormControl>
+          <Select onValueChange={field.onChange} defaultValue={field.value}>
+            <FormControl>
+              <SelectTrigger className="shad-select-trigger">
+                <SelectValue placeholder={props.placeholder} />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent className="shad-select-content">
+              {props.children}
+            </SelectContent>
+          </Select>
+        </FormControl>
+      );
+    case FormFieldType.TEXTAREA:
+      return (
+        <FormControl>
+          <Textarea
+            placeholder={props.placeholder}
+            {...field}
+            className="shad-textArea"
+            disabled={props.disabled}
+          />
+        </FormControl>
+      );
     default:
       break;
   }
