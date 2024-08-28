@@ -4,10 +4,15 @@ import { Button } from "./ui/button";
 interface ButtonProps {
   isLoading: boolean;
   children: React.ReactNode;
+  className?: string;
 }
-const SubmitButton = ({ isLoading, children }: ButtonProps) => {
+const SubmitButton = ({ isLoading, children, className }: ButtonProps) => {
   return (
-    <Button type="submit" disabled={isLoading}>
+    <Button
+      type="submit"
+      disabled={isLoading}
+      className={className ?? "shad-primary-btn w-full"}
+    >
       {children}
     </Button>
   );

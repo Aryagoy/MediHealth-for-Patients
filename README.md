@@ -24,7 +24,9 @@ Implementing a Nextjs application
 
 Tools to use:
 * ShadcUI - to create the elements of the frontend like form, button, label, etc
+* Tailwind CSS
 * Appwrite - for databases, authentication, messaging etc
+* Reacr-dropzone - for file uploads in the form
 
 
 Flow

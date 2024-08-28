@@ -24,6 +24,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
+import { Checkbox } from "../ui/checkbox";
 
 export enum FormFieldType {
   INPUT = "input",
@@ -32,6 +33,7 @@ export enum FormFieldType {
   SKELETON = "SKELETON",
   SELECT = "select",
   TEXTAREA = "textarea",
+  CHECKBOX = "CHECKBOX",
 }
 
 interface CustomProps {
@@ -146,6 +148,21 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
           />
         </FormControl>
       );
+    case FormFieldType.CHECKBOX:
+      return (
+        <FormControl>
+          <div className="flex items-center gap-4">
+            <Checkbox
+              id={props.name}
+              checked={field.value}
+              onCheckedChange={field.onChange}
+            />
+            <label htmlFor={props.name} className="checkbox-label">
+              {props.label}
+            </label>
+          </div>
+        </FormControl>
+      );
     default:
       break;
   }
@@ -159,7 +176,9 @@ const FormFields = (props: CustomProps) => {
       name={name}
       render={({ field }) => (
         <FormItem className="flex-1">
-          {label && <FormLabel className="shad-input-label">{label}</FormLabel>}
+          {props.fieldType !== FormFieldType.CHECKBOX && label && (
+            <FormLabel className="shad-input-label">{label}</FormLabel>
+          )}
           <RenderInput field={field} props={props} />
           <FormMessage className="shad-error" />
         </FormItem>
