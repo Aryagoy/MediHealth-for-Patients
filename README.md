@@ -1,5 +1,8 @@
 # MediHealth for Patients
 
+<img width="1511" alt="Screenshot 2024-09-16 at 12 23 36 AM" src="https://github.com/user-attachments/assets/7849e4d7-6271-408d-b519-0863a6062b59">
+
+
 MediHealth for Patients is a comprehensive healthcare application designed to manage and organize medical records, facilitate secure communication with healthcare providers, and deliver personalized health insights. Built using **Next.js**, this project integrates advanced features such as authentication, document upload, appointment booking, and a doctor directory.
 
 ## Table of Contents
